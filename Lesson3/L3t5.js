@@ -11,7 +11,7 @@
 let arr = [1, 2, -4, 3, -9, -1, 7];
 
 function isPositive (n) {
-    
+
     if(typeof n === 'number'){
         return (n>0) ? true : false;
     } else {
@@ -28,6 +28,4 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 //печать результирующего массива 
-for (let i = 0; i < rez.length; i++) {
-    console.log(rez[i]);
-    }
+console.log(rez.toString());
