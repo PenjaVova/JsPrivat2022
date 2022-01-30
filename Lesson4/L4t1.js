@@ -12,3 +12,10 @@
 const arr = [1,2,3];
 forEach(arr, function(item, i, arr) {});
 */
+function forEach (arr, fn) {
+    let rezultArr = [];
+    for (let index = 0; index < arr.length; index++) {
+        rezultArr.push(fn(arr[index]));
+    }
+    return rezultArr;
+}
