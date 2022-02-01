@@ -19,6 +19,8 @@ function every (arr, fn){
         throw new Error("2st argument must be function");
     }
 
+    let isOk = true;
+
     for (let index = 0; index < arr.length; index++) {
         if(!fn(arr[index])) {
             isOk = false;
@@ -30,5 +32,5 @@ function every (arr, fn){
 }
 
 const arr = [1,2,3];
-
-every (arr,word => elem > 0);
+//вызов
+ console.log(every (arr,elem => elem > 0));
