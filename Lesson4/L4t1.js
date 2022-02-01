@@ -13,9 +13,28 @@ const arr = [1,2,3];
 forEach(arr, function(item, i, arr) {});
 */
 function forEach (arr, fn) {
-    let rezultArr = [];
-    for (let index = 0; index < arr.length; index++) {
-        rezultArr.push(fn(arr[index]));
+
+    if (!Array.isArray(arr)) {
+        throw new Error("1st argument must be array-type");
     }
-    return rezultArr;
+    if (typeof fn  !== 'function') {
+        throw new Error("2st argument must be function");
+    }
+
+    //let rezultArr = [];
+
+    for (let index = 0; index < arr.length; index++) {
+        const val = fn(arr[index]);
+    }
+    //return rezultArr;
 }
+
+function x2 (elem) {
+    let val = elem*2;
+    console.log(val);
+    return val;
+};
+
+const arr = [1,2,3];
+
+forEach (arr, x2);
