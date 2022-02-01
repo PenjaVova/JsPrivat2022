@@ -16,17 +16,19 @@ reduce(arr, function(acc, item, i, arr) {}, acc);
 */
 function reduce(arr, fn, initVal){
 
-    if(!arr.length) return null;
+    if (!Array.isArray(arr)) {
+        throw new Error("1st argument must be array-type");
+    }
+    if (typeof fn  != 'function') {
+        throw new Error("2st argument must be function");
+    }
 
-    let rez;
-    let startIndex;
 //проверка на наличие 3-го параметра
-    if(initVal !== undefined) {
+    if(initVal !== undefined && (typeof initVal ==='number' || typeof initVal ==='string')) {
         startIndex = 0;
         rez = initVal;
     } else {
-        startIndex = 1;
-        rez = arr[0];
+        throw new Error("wrong 3st argument");
     }
 
     for (let i = startIndex; i < arr.length; i++) {
@@ -35,3 +37,13 @@ function reduce(arr, fn, initVal){
 
     return rez;
 }
+
+
+const arr = [1,2,3];
+const acc = 0;
+
+let rezReduce= reduce (arr, function(numberA, numberB){
+    return (numberA + numberB);
+},acc)
+
+console.log('rez reduce() = ' + rezReduce);
