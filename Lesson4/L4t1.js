@@ -37,4 +37,4 @@ function x2 (elem) {
 
 const arr = [1,2,3];
 
-forEach (arr, x2);
+ forEach (arr, x2);

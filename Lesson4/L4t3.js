@@ -12,9 +12,12 @@ every(arr, function(item, i, arr) {});
 */
 function every (arr, fn){
 
-    if (!arr.length) return false;
-    
-    let isOk = true;
+    if (!Array.isArray(arr)) {
+        throw new Error("1st argument must be array-type");
+    }
+    if (typeof fn  != 'function') {
+        throw new Error("2st argument must be function");
+    }
 
     for (let index = 0; index < arr.length; index++) {
         if(!fn(arr[index])) {
@@ -25,3 +28,7 @@ function every (arr, fn){
 
     return isOk;
 }
+
+const arr = [1,2,3];
+
+every (arr,word => elem > 0);
