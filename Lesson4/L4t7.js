@@ -18,3 +18,10 @@ console.log( arrLength ); // 4,5,2,3
 
 - используйте вместо цикла `for` метод `map`
 */
+var arr = ['abcd', 'abcde', 'ab', 'abc'];
+
+var arrLength = [];
+
+arrLength = arr.map(elem=> elem.length)
+
+console.log( arrLength ); // 4,5,2,3
