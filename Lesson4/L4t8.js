@@ -12,6 +12,10 @@
  */
 function f(arr) {
 
+    if(!Array.isArray(arr)){
+        throw new Error("argument must be a array");
+    }
+
     let sum = 0;
 
     function inner (arr) {
