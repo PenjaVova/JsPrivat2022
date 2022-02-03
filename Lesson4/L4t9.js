@@ -9,3 +9,30 @@
 ```javascript
 arrayFill('x',5); // [x,x,x,x,x]
 */
+
+function arrayFill(obj,count) {
+
+    if (typeof obj !== 'number' &&
+        typeof obj !== 'string' &&
+        typeof obj !== 'object' &&
+        !Array.isArray(obj) ) {
+            throw new Error ("1st param error");
+        }
+
+    if (typeof count !== 'number') {
+            throw new Error ("2nd param error")
+        }
+
+
+    let rez = [];
+
+    while (count>0){
+        rez.push(obj)
+        count--
+    }    
+    return rez;
+}
+
+let arr = arrayFill('t',3);
+
+console.log(arr.toString());
